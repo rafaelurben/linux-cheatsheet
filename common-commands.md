@@ -1,4 +1,4 @@
-# Common Linux commands 
+# Common commands 
 
 ## General
 - `getent <db> <?>`
