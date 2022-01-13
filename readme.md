@@ -9,5 +9,6 @@ A useful cheatsheet with linux commands.
 3. [Users and authentication](3-users-and-authentication.md)
 4. [Software management](4-software-management.md)
 5. [Scripting](5-scripting.md)
+6. [systemd](6-systemd.md)
 
 - [More commands](more-commands.md)

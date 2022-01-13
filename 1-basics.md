@@ -5,6 +5,8 @@ Learn the basics.
 
 w.i.p
 
+- `man <command>` get help pages
+
 ## Variables
 ### Shell variables
 - `set` print all shell vars
