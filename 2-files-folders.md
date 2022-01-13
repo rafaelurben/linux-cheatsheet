@@ -19,11 +19,19 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 - `rmdir <path>` delete a directory
 
 ## Files
-- `touch <path>` create a file
-- `nano <path>` edit a file with the nano editor (`Ctrl+o ENTER Ctrl+x` to save and exit)
+### Manipulation
+- `touch <path>` create an empty file
 - `rm <path>` delete a file
 - `cp <path_old> <path_new>` copy a file/dir
 - `mv <path_old> <path_new>` move/rename a file/dir
+
+### Editing
+- `nano <path>` edit (and create) a file with the nano editor 
+	- `Ctrl+o ENTER Ctrl+x` to save and exit
+
+### Reading
+- `cat <path>` print a file to console
+- `b cat <path>` print an image to console with the _butterfly launcher_ (if installed)
 
 ## Permissions
 

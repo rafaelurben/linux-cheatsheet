@@ -1,4 +1,3 @@
 # More commands 
 
-## General
-- `getent <db> <?>`
+w.i.p

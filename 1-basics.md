@@ -32,3 +32,7 @@ System-wide vars can be stored in `/etc/environment` (accessible by every shell)
 
 ### More
 - `export PATH="$PATH:<path-to-add>"` add a path to PATH
+
+## Basic commands
+
+- `echo <args>` print arguments to default output

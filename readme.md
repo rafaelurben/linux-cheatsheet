@@ -8,5 +8,6 @@ A useful cheatsheet with linux commands.
 2. [Files and folders](2-files-folders.md)
 3. [Users and authentication](3-users-and-authentication.md)
 4. [Software management](4-software-management.md)
+5. [Scripting](5-scripting.md)
 
 - [More commands](more-commands.md)
