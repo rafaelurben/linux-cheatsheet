@@ -6,11 +6,12 @@ Users are stored in the `/etc/passwd` file.
 
 - `adduser <name> [group]` create a user or add a user to a group
 - `deluser <name> [group]` delete a user or remove a user from a group
--  `getent passwd <?>`
 
 ### Understanding _/etc/passwd_
 
 w.i.p
+
+- `getent passwd <username>` get the line in `/etc/passwd` for the specified username
 
 ## Groups
 Groups are stored in the `/etc/group` file.
@@ -22,6 +23,8 @@ Groups are stored in the `/etc/group` file.
 ### Understanding _/etc/group_
 
 w.i.p
+
+- `getent group <groupname>` get the line in `/etc/group` for the specified group
 
 ## Password authentication
 Info about user authentication is stored in `/etc/shadow` .
@@ -38,19 +41,16 @@ Info about user authentication is stored in `/etc/shadow` .
 
 
 ## SSH
-
-w.i.p
+- `ssh-keygen -b <bits>` generate a new keypair with the length of b bits
 
 Generated keys are stored in `~/.ssh/` with the names `...id_rsa` and `...id_rsa.pub` (name changes depending on options).
 
-Authorized keys are stored in `~/.ssh/authorized_keys`.
-
-- `ssh-keygen -b <bits>` generate a new keypair with the length of b bits
-- `ssh-keygen -f "/home/<username>/.ssh/known_hosts" -R "<hostname>"` remove server from known_hosts file
-
 - `ssh-copy-id -i ~/.ssh/id_rsa <username>@<hostname>` upload the public key to a server
 
+Authorized keys are stored in `~/.ssh/authorized_keys`.
+
 - `ssh <username>@<hostname> [command]` start an ssh session (and run a command and exit)
+- `ssh-keygen -f "/home/<username>/.ssh/known_hosts" -R "<hostname>"` remove server from known_hosts file
 
 ### SSH Config
 File: `~/.ssh/config`
