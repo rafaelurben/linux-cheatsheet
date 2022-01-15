@@ -1,14 +1,9 @@
 # Linux cheatsheet
+This is a cheatsheet with useful linux commands. You can view it [here](https://rafaelurben.github.io/linux-cheatsheet/)
 
-A useful cheatsheet with linux commands.
+I'm a linux newbie and can't guarantee that any of the stuff in this repository is correct.
 
-## Table of contents
+If you find a mistake, feel free to create a pull request or issue.
 
-1. [Basic](1-basics.md)
-2. [Files and folders](2-files-folders.md)
-3. [Users and authentication](3-users-and-authentication.md)
-4. [Software management](4-software-management.md)
-5. [Scripting](5-scripting.md)
-6. [systemd](6-systemd.md)
-
-- [More commands](more-commands.md)
+## Editing
+- `command` — description
