@@ -8,7 +8,7 @@
 - `tmux attach -t <name>` — attach to a session
 
 ## tmux  commands
-These command can be either run via the terminal via the `tmux` command or via the tmux command prompt. To open the tmux command prompt, press `Ctrl+b` followed by a semicolon `:`. 
+These command can be either run via the terminal via the `tmux` command or via the tmux command prompt. To open the tmux command prompt, press `Ctrl+b` followed by a colon `:`. 
 
 - `kill-session -t <name>` — kill a session
 - `set-option [-g] <option> <state>` — change an option (-g for global)
