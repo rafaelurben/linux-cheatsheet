@@ -9,6 +9,13 @@ w.i.p
 - `echo <args>` — print arguments to default output
 - `man <command>` — get help pages
 
+
+## Output redirect
+You can redirect the output of a command to a file or something else with appending `>PATH`.
+
+You can redirect errors with  `2>PATH`.
+
+
 ## Variables
 ### Shell variables
 - `set` — print all shell vars
