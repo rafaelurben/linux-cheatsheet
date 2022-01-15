@@ -12,4 +12,5 @@ A useful cheatsheet with linux commands.
 6. [systemd](6-systemd.md)
 
 
+- [Other tools](tools/index.md)
 - [More commands](more-commands.md)
