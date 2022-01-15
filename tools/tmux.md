@@ -1,3 +1,7 @@
+---
+search: true
+---
+
 # tmux
 ## terminal commands
 - `tmux new-session [-s <name>]` — create a new session

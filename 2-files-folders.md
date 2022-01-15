@@ -1,3 +1,7 @@
+---
+search: true
+---
+
 # Files and folders
 Learn how to manage files and folders.
 

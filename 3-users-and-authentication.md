@@ -1,3 +1,7 @@
+---
+search: true
+---
+
 # Users and authentication
 Learn about users, groups and user authentication.
 

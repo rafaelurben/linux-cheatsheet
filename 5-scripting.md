@@ -1,3 +1,7 @@
+---
+search: true
+---
+
 # Scripting
 
 Shebang (first line of file) for shell (`.sh`) files: `#!/bin/sh`

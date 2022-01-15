@@ -1,3 +1,7 @@
+---
+search: true
+---
+
 # systemd
 
 ## systemctl

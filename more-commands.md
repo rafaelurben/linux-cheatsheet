@@ -1,3 +1,7 @@
+---
+search: true
+---
+
 # More commands 
 
 - `curl` — make web requests

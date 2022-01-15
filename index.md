@@ -1,3 +1,7 @@
+---
+search: true
+---
+
 # Linux cheatsheet
 
 A useful cheatsheet with linux commands.

@@ -1,0 +1,24 @@
+---
+---
+
+{% assign counter = 0 %}
+{% assign maxCount = 0 %}
+
+{% for p in site.pages %}{% if p.search %}
+{% assign maxCount=maxCount | plus:1 %}
+{% endif %}{% endfor %}
+
+[
+  {% for p in site.pages %}{% if p.search %}
+  {% assign counter=counter | plus:1 %}
+    {
+
+      "title"    : "{{ p.title | escape }}",
+      "description" : "{{ p.description | escape }}",
+      "url"      : "{{ site.baseurl }}{{ p.dir }}",
+      "content"  : "{{ p.content | strip_html | strip_newlines | escape }}",
+      "excerpt"  : "{{ p.excerpt | escape }}"
+
+    } {% if counter < maxCount %},{% endif %}
+  {% endif %}{% endfor %}
+]

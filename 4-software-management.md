@@ -1,3 +1,7 @@
+---
+search: true
+---
+
 # Software management
 
 The repos that are used as package database are stored in `/etc/apt/sources.list`.

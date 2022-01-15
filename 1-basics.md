@@ -1,3 +1,7 @@
+---
+search: true
+---
+
 # Basics
 Learn the basics.
 
