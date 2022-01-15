@@ -3,7 +3,7 @@
 The repos that are used as package database are stored in `/etc/apt/sources.list`.
 
 ## Install & Upgrade packages
-- `apt-get install <name-of-package>` — install/upgrade a package
+- `apt-get install <name-of-package> [-y]` — install/upgrade a package
 - `apt-get install -f` — fix broken dependencies
 - `apt-get update` — update local database from repos
 - `apt-get upgrade` — upgrade installed packages

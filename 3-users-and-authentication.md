@@ -4,9 +4,18 @@ Learn about users, groups and user authentication.
 ## Users
 Users are stored in the `/etc/passwd` file. 
 
-- `adduser <name> [group]` — create a user or add a user to a group
-- `deluser <name> [group]` — delete a user or remove a user from a group
-
+- `adduser <name>` — create a user
+	- `-c <comment>`
+	- `--home <dir>`
+	- `--no-create-home`
+	- `--gid <group id>`
+	- `--shell <shell>`
+	- `--disabled-login`
+	- `--disabled-passord`
+- `adduser <name> <group>`  — add user to a group
+- `deluser <name>` — delete a user
+- `deluser <name> <group>`  — remove user from a group
+- 
 ### Understanding _/etc/passwd_
 
 w.i.p
