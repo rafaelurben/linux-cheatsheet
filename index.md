@@ -1,5 +1,6 @@
 ---
 title: Linux cheatsheet
+description: A useful cheatsheet with linux commands
 search: true
 ---
 
@@ -16,5 +17,15 @@ A useful cheatsheet with linux commands.
 5. [Scripting](5-scripting.md)
 6. [systemd](6-systemd.md)
 
-- [Other tools](tools/index.md)
 - [More commands](more-commands.md)
+
+### More tools & topics
+
+#### Tools
+
+- [tmux](tools/tmux.md) - cosole sessions, windows and panes
+
+#### Topics
+
+- [networking](topics/networking.md) - useful commands for networking stuff
+
