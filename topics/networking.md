@@ -15,6 +15,7 @@ On Linux, the ARP table can be displayed with `arp`. Entries can be deleted with
 - `ip r(oute) add default via <IP>` — add default gateway
 - `ip r(oute) del default via <IP>` — remove default gateway
 - `ip r(oute) add <DESTINATION NETWORK ADDRESS>/<DESTINATION NETWORK LENGTH> via <NEXT HOP IP ADDRESS>` — add static route
+- `ip neigh` — print arp table
 - `ping [-c <count>] <IP>` — send packets and wait for echo
 - `traceroute <IP>` — check route and hops
 
@@ -51,3 +52,6 @@ Can be used with `watch <command>`.
 
 Use `grep [-B <lines_before>] [-A <lines-after>] "<search>"` as a filter.
 
+## other
+
+`telnet <ip> [port]` — connect to server
