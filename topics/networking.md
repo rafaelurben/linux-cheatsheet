@@ -5,11 +5,11 @@ search: true
 
 # Networking
 
-## arp
+## ARP
 
 On Linux, the ARP table can be displayed with `arp`. Entries can be deleted with `sudo arp -d <address>`. Use `sudo arp -a` to get system info.
 
-## routing
+## Routing
 
 - `netplan apply` — apply netplan config
 - `ip r(oute) add default via <IP>` — add default gateway
@@ -32,7 +32,7 @@ On Linux, the ARP table can be displayed with `arp`. Entries can be deleted with
 
 Can be used with `watch <command>`.
 
-## dn
+## DNS
 
 - `nslookup` — make DNS queries
 -> `server <IP>` — set DNS server
@@ -40,3 +40,14 @@ Can be used with `watch <command>`.
 -> `domain` — query a domain
 -> `exit` — leave this prompt
 - `dig <domain> [type]` — query the default DNS server
+
+## TShark
+
+- `tshark` — capture network traffic to standard output
+- `tshark -r <file>.pcap` — analyze network capture file
+- `tshark -r <file>.pcap --export-objects <PROTOCOL>,<DEST-DIR` — export
+- `tshark -r <file>.pcap "http.request.method == POST and http.file_data contains password"` — use filters
+- `tshark -r <file>.pcap -T json` — specify output format
+
+Use `grep [-B <lines_before>] [-A <lines-after>] "<search>"` as a filter.
+
