@@ -15,8 +15,8 @@
 
       "title"    : "{{ p.title | escape }}",
       "description" : "{{ p.description | escape }}",
-      "url"      : "{{ site.baseurl }}{{ p.dir }}",
-      "content"  : "{{ p.content | strip_html | strip_newlines | escape }}",
+      "url"      : "{{ site.baseurl }}/{{ p.path | replace: '.md', '' }}",
+      "content"  : "{{ p.content | strip_html | strip_newlines | escape | remove:  "\" }}",
       "excerpt"  : "{{ p.excerpt | escape }}"
 
     } {% if counter < maxCount %},{% endif %}

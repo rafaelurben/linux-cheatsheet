@@ -1,4 +1,5 @@
 ---
+title: Linux cheatsheet
 search: true
 ---
 
@@ -14,7 +15,6 @@ A useful cheatsheet with linux commands.
 4. [Software management](4-software-management.md)
 5. [Scripting](5-scripting.md)
 6. [systemd](6-systemd.md)
-
 
 - [Other tools](tools/index.md)
 - [More commands](more-commands.md)

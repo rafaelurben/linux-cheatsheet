@@ -1,4 +1,5 @@
 ---
+title: Scripting
 search: true
 ---
 

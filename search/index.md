@@ -35,8 +35,8 @@
     SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
-        searchResultTemplate: '<li class="list-group-item"><span><a href="{url}">{title}</a> - {description}</span></li>',
-        noResultsText: '<li class="list-group-item">Keine Ergebnisse gefunden!</li>',
+        searchResultTemplate: '<li class="list-group-item"><span><a href="{url}">{title}</a></span></li>',
+        noResultsText: '<li class="list-group-item">No results found!</li>',
         fuzzy: false,
         limit: 25,
         json: '/search/content.json'

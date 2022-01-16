@@ -1,2 +1,3 @@
 theme: jekyll-theme-hacker
 port: 54321
+baseurl: /linux-cheatsheet

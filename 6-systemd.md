@@ -1,10 +1,12 @@
 ---
+title: systemd
 search: true
 ---
 
 # systemd
 
 ## systemctl
+
 - `systemctl start <name>.service` — start the service.
 - `systemctl restart <name>.service` — restart the service.
 - `systemctl stop <name>.service` — stop the service.
@@ -43,8 +45,8 @@ After changing unit files, the following command needs to be run:
 - `systemctl daemon-reload` — reload
 
 ## journalctl
+
 - `journalctl -b` — show all log messages since boot.
 - `journalctl -x` — add explanatory help text to log messages when available.
 - `journalctl -f` — follow new messages.
 - `journalctl -u <unit>` — show logs only from the specified unit.
-
