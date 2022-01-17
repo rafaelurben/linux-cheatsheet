@@ -11,9 +11,9 @@ Learn the basics.
 
 w.i.p
 
-- `exit` — end a terminal (or ssh) session
-- `echo <args>` — print arguments to default output
-- `man <command>` — get help pages
+- `exit`: end a terminal (or ssh) session
+- `echo <args>`: print arguments to default output
+- `man <command>`: get help pages
 
 ## Output redirect
 
@@ -25,23 +25,23 @@ You can redirect errors with `2>PATH`.
 
 ### Shell variables
 
-- `set` — print all shell vars
-- `set | more` — print shell vars
-- `set | grep VAR=` — get a specified shell var
-- `$VAR` — use a shell var
-- `VAR=CONTENT` — set a shell variable
+- `set`: print all shell vars
+- `set | more`: print shell vars
+- `set | grep VAR=`: get a specified shell var
+- `$VAR`: use a shell var
+- `VAR=CONTENT`: set a shell variable
 
 ### Environment variables
 
-- `printenv` — print all environment vars
-- `printenv VAR VAR2...` — print one or more environment vars
-- `export VAR=CONTENT` — set an environment var
+- `printenv`: print all environment vars
+- `printenv VAR VAR2...`: print one or more environment vars
+- `export VAR=CONTENT`: set an environment var
 
 ### Both var types
 
-- `unset VAR` — unset a shell or environment variable
-- `export VAR` — promote a shell to an environment variable
-- `export -n VAR` — demote an environment to a shell variable
+- `unset VAR`: unset a shell or environment variable
+- `export VAR`: promote a shell to an environment variable
+- `export -n VAR`: demote an environment to a shell variable
 
 ### Persistent env vars
 
@@ -53,4 +53,4 @@ System-wide vars can be stored in `/etc/environment` (accessible by every shell)
 
 ### More
 
-- `export PATH="$PATH:<path-to-add>"` — add a path to PATH
+- `export PATH="$PATH:<path-to-add>"`: add a path to PATH

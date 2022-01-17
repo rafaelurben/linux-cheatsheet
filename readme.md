@@ -8,4 +8,4 @@ If you find a mistake, feel free to create a pull request or issue.
 
 ## Editing
 
-- `command` — description
+- `command`: description

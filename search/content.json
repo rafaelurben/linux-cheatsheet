@@ -13,11 +13,11 @@
   {% assign counter=counter | plus:1 %}
     {
 
-      "title"    : "{{ p.title | escape }}",
-      "description" : "{{ p.description | escape }}",
-      "url"      : "{{ site.baseurl }}/{{ p.path | replace: '.md', '' }}",
-      "content"  : "{{ p.content | strip_html | strip_newlines | escape | remove:  "\" }}",
-      "excerpt"  : "{{ p.excerpt | escape }}"
+      "title"   : "{{ p.title | escape }}",
+      "description": "{{ p.description | escape }}",
+      "url"     : "{{ site.baseurl }}/{{ p.path | replace: '.md', '' }}",
+      "content" : "{{ p.content | strip_html | strip_newlines | escape | remove:  "\" }}",
+      "excerpt" : "{{ p.excerpt | escape }}"
 
     } {% if counter < maxCount %},{% endif %}
   {% endif %}{% endfor %}

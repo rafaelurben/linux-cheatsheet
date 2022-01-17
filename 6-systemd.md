@@ -7,12 +7,12 @@ search: true
 
 ## systemctl
 
-- `systemctl start <name>.service` — start the service.
-- `systemctl restart <name>.service` — restart the service.
-- `systemctl stop <name>.service` — stop the service.
-- `systemctl status <name>.service` — display the status of the service.
-- `systemctl enable <name>.service` — set the service to be started on boot.
-- `systemctl disable <name>.service` — set the service to not be started on boot.
+- `systemctl start <name>.service`: start the service.
+- `systemctl restart <name>.service`: restart the service.
+- `systemctl stop <name>.service`: stop the service.
+- `systemctl status <name>.service`: display the status of the service.
+- `systemctl enable <name>.service`: set the service to be started on boot.
+- `systemctl disable <name>.service`: set the service to not be started on boot.
 
 Note: If no extension is specified, `.service` is automatically assumed.
 
@@ -37,16 +37,16 @@ Unit files from installed software are stored in `/lib/systemd/system`. To overw
 
 To use a unit stored in another folder, it can be linked to `/etc/systemd/system`:
 
-- `systemctl link <full-path>` — create a link
-- `systemctl disable <path>` — disable link
+- `systemctl link <full-path>`: create a link
+- `systemctl disable <path>`: disable link
 
 After changing unit files, the following command needs to be run:
 
-- `systemctl daemon-reload` — reload
+- `systemctl daemon-reload`: reload
 
 ## journalctl
 
-- `journalctl -b` — show all log messages since boot.
-- `journalctl -x` — add explanatory help text to log messages when available.
-- `journalctl -f` — follow new messages.
-- `journalctl -u <unit>` — show logs only from the specified unit.
+- `journalctl -b`: show all log messages since boot.
+- `journalctl -x`: add explanatory help text to log messages when available.
+- `journalctl -f`: follow new messages.
+- `journalctl -u <unit>`: show logs only from the specified unit.
