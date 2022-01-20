@@ -52,6 +52,6 @@ Can be used with `watch <command>`.
 
 Use `grep [-B <lines_before>] [-A <lines-after>] "<search>"` as a filter.
 
-## other
+## Other
 
 `telnet <ip> [port]`: connect to server

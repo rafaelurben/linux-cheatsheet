@@ -17,16 +17,11 @@ A useful cheatsheet with linux commands.
 5. [Scripting](5-scripting.md)
 6. [systemd](6-systemd.md)
 7. [System info](7-system-info.md)
+8. [Networking](8-networking.md)
 
 - [More commands](more-commands.md)
 
-### More tools & topics
+## Tools
 
-#### Tools
-
-- [tmux](tools/tmux.md) - cosole sessions, windows and panes
-
-#### Topics
-
-- [networking](topics/networking.md) - useful commands for networking stuff
+- [tmux](tools/tmux.md) - console sessions, windows and panes
 

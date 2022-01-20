@@ -22,7 +22,7 @@ Users are stored in the `/etc/passwd` file.
 - `adduser <name> <group>`: add user to a group
 - `deluser <name>`: delete a user
 - `deluser <name> <group>`: remove user from a group
--
+
 
 ### Understanding _/etc/passwd_
 

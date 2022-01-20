@@ -6,6 +6,6 @@ I'm a linux newbie and can't guarantee that any of the stuff in this repository 
 
 If you find a mistake, feel free to create a pull request or issue.
 
-## Editing
+## Templates
 
 - `command`: description
