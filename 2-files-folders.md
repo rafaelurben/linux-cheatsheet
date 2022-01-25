@@ -40,11 +40,15 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 ### Editing
 
 - `nano <path>`: edit (and create) a file with the nano editor
+  - `+<num>`: open at specific line
   - `Ctrl+o ENTER Ctrl+x` to save and exit
 
 ### Reading
 
 - `cat <path>`: print a file to console
+- `tail <path>`: print the end of a file
+	- `-n <line>`: print the last x lines
+	- `-f`: follow the file for changes and print them continuously
 - `b cat <path>`: print an image to console with the _butterfly launcher_ (if installed)
 
 ### Finding
@@ -52,6 +56,9 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 - `find / -name '*searchstring*'`: Searches the file system for a file that includes searchstring in its name.
 - `find / -name '*searchstring*' -exec rm {} \;`: Searches the file system for a file that includes searchstring in its name and deletes it with the rm command. The backslash and semicolon symbolize the end of the -exec section.
 - `grep searchstring /var/myfirstfile`: Searches for the pattern searchstring from the contents of /var/myfirstfile.
+	- `-i`: ignore case
+	- `-R`: read all files under directories recursiveley and follow symbolic links
+	- `-n`: print line number
 
 ## Archives
 
