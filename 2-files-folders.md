@@ -35,12 +35,13 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 - `touch <path>`: create an empty file
 - `rm <path>`: delete a file
 - `cp <path_old> <path_new>`: copy a file/dir
+- `scp <username@hostname>:<path_source> <path_target>`: copy file from remote to local
 - `mv <path_old> <path_new>`: move/rename a file/dir
+
 
 ### Editing
 
-- `nano <path>`: edit (and create) a file with the nano editor
-  - `+<num>`: open at specific line
+- `nano [+<line>] <path>`: edit (and create) a file with the nano editor
   - `Ctrl+o ENTER Ctrl+x` to save and exit
 
 ### Reading
@@ -50,6 +51,11 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 	- `-n <line>`: print the last x lines
 	- `-f`: follow the file for changes and print them continuously
 - `b cat <path>`: print an image to console with the _butterfly launcher_ (if installed)
+
+### Information
+
+- `wc <file>`: get word count 
+- `wc -l <file>`: get line count
 
 ### Finding
 
@@ -64,6 +70,8 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 
 - `tar -czvf <filename>.tar.gz /var/myfirstdirectory`: compress a directory into an archive
 - `tar -xzvf <filename>.tar.gz`: extract the archive
+
+More: `zip` and `unzip` 
 
 ## Permissions
 
