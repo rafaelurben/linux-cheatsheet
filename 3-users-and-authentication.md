@@ -48,6 +48,21 @@ w.i.p
 
 Info about user authentication is stored in `/etc/shadow` .
 
+### Understanding _/etc/shadow_
+
+w.i.p
+
+- `getent shadow <username>`: get the line in `/etc/shadow` for the specified user
+
+#### Encryption algorithms
+
+1. MD5
+2. bcrypt
+3. -
+4. -
+5. sha256
+6. sha512
+
 ## Passwords
 
 - `passwd -S <user>`: get user status
