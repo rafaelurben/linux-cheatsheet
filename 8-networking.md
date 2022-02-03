@@ -54,4 +54,5 @@ Use `grep [-B <lines_before>] [-A <lines-after>] "<search>"` as a filter.
 
 ## Other
 
-`telnet <ip> [port]`: connect to server
+- `telnet <ip> [port]`: connect to server
+- `nc -lnvp 8000`: open a simple netcat server
