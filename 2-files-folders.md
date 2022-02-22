@@ -71,7 +71,10 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 - `tar -czvf <filename>.tar.gz /var/myfirstdirectory`: compress a directory into an archive
 - `tar -xzvf <filename>.tar.gz`: extract the archive
 
-More: `zip` and `unzip` 
+More: `zip` and `unzip`
+
+- `unzip [options] <file>`: unzip a file
+	- `-j`: into current directory
 
 ## Permissions
 
