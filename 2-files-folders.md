@@ -13,17 +13,28 @@ Learn how to manage files and folders.
 
 - `pwd`: print working directory
 - `cd <path>`: change directory
-	- Use `../` to navigate upwards / to parent directory
-	- Use `/<...>` for an absolute path (relative to root folder)
-	- Use `~/<...>` for a path relative to the current user home
+    - Use `../` to navigate upwards / to parent directory
+    - Use `/<...>` for an absolute path (relative to root folder)
+    - Use `~/<...>` for a path relative to the current user home
 
 Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.txt"`)
+
+#### Hierarchy
+
+The file system hierarchy is not identical on all distributions but thanks to the _Filesystem Hierarchy Standard_ (FHS),
+there is a typical structure found on almost all distributions.
+
+![FHS - Filesystem Hierarchy Standard](assets/img/filesystemhierarchystandard.png)
 
 ### Information
 
 - `ls [folder]`: list the items in the currect or specified folder
 - `ls -l [folder]`: same, but with details
 - `ls -ld [folder]`: get infos about the current or specified folder
+
+![File permissions](assets/img/file_permissions.png)
+
+(Quelle Bild: www.ics.uci.edu)
 
 ### Manipulation
 
@@ -40,38 +51,39 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 - `scp <username@hostname>:<path_source> <path_target>`: copy file from remote to local
 - `mv <path_old> <path_new>`: move/rename a file/dir
 
-
 ### Editing
 
 - `nano [+<line>] <path>`: edit (and create) a file with the nano editor
-  - `Ctrl+o ENTER Ctrl+x` to save and exit
+    - `Ctrl+o ENTER Ctrl+x` to save and exit
 - `vi <path>`: edit (and create) a file with the vi(m) editor
-  - `I` to enter insert mode
-  - `Esc` to exit insert mode / enter command mode
-  - `:wq` to save and exit
-  - `:q!` to exit without save
+    - `I` to enter insert mode
+    - `Esc` to exit insert mode / enter command mode
+    - `:wq` to save and exit
+    - `:q!` to exit without save
 
 ### Reading
 
 - `cat <path>`: print a file to console
 - `tail <path>`: print the end of a file
-	- `-n <line>`: print the last x lines
-	- `-f`: follow the file for changes and print them continuously
+    - `-n <line>`: print the last x lines
+    - `-f`: follow the file for changes and print them continuously
+- `less <path>`: read file in scrollable viewer
 - `b cat <path>`: print an image to console with the _butterfly launcher_ (if installed)
 
 ### Information
 
-- `wc <file>`: get word count 
+- `wc <file>`: get word count
 - `wc -l <file>`: get line count
 
 ### Finding
 
 - `find / -name '*searchstring*'`: Searches the file system for a file that includes searchstring in its name.
-- `find / -name '*searchstring*' -exec rm {} \;`: Searches the file system for a file that includes searchstring in its name and deletes it with the rm command. The backslash and semicolon symbolize the end of the -exec section.
+- `find / -name '*searchstring*' -exec rm {} \;`: Searches the file system for a file that includes searchstring in its
+  name and deletes it with the rm command. The backslash and semicolon symbolize the end of the -exec section.
 - `grep searchstring /var/myfirstfile`: Searches for the pattern searchstring from the contents of /var/myfirstfile.
-	- `-i`: ignore case
-	- `-R`: read all files under directories recursiveley and follow symbolic links
-	- `-n`: print line number
+    - `-i`: ignore case
+    - `-R`: read all files under directories recursiveley and follow symbolic links
+    - `-n`: print line number
 
 ## Archives
 
@@ -81,7 +93,7 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 More: `zip` and `unzip`
 
 - `unzip [options] <file>`: unzip a file
-	- `-j`: into current directory
+    - `-j`: into current directory
 
 ## Permissions
 
@@ -91,7 +103,8 @@ There are three permission types: _`r`ead_, _`w`rite_ and _e`x`ecute_.
 
 Example permissions: `-rwxrwxrwx`
 
-The first positions stands for file (`-`) or folder (`d`). The three `rwx` triplets are for the three permission groups: (nothing or `a` stands for all of them)
+The first positions stands for file (`-`) or folder (`d`). The three `rwx` triplets are for the three permission
+groups: (nothing or `a` stands for all of them)
 
 1. owner `u`ser
 2. owner `g`roup
@@ -109,7 +122,7 @@ Each of the three `wxr` triplets (owner user, owner group, others) is represente
 
 #### Change file permissions
 
-File permissions can be changed via `chmod` command.
+File permissions can be changed via `chmod <perm/num> <path>` command.
 
 - `chmod +x`: add execute permission to all three groups
 - `chmod g+w`: add write permission to the owner group
@@ -121,12 +134,13 @@ File permissions can be changed via `chmod` command.
 
 - `chown <username> <path>`: transfer user ownership
 - `chown <username>:<group> <path>`: transfer user and group ownership
-- `chown:<group> <path>`: transfer group ownership
+- `chown :<group> <path>`: transfer group ownership
 - `chgrp <group> <path>`: transfer group ownership
 
 ### Special permissions
 
-Files created in folders that have the setUID or setGID permission set will not belong to the creator but to the (user/group) owner of the parent folder.
+Files created in folders that have the setUID or setGID permission set will not belong to the creator but to the (
+user/group) owner of the parent folder.
 
 `s` = with execute permission; `S` = without execute permission
 

@@ -23,7 +23,7 @@ Users are stored in the `/etc/passwd` file.
 
 - `who`: see all currently logged in users
 - `whoami`: find out who's currently logged in
-- `adduser <name>`: create a user
+- `useradd <name>`: create a user
   - `-c <comment>`
   - `--home <dir>`
   - `--no-create-home`
@@ -31,11 +31,13 @@ Users are stored in the `/etc/passwd` file.
   - `--shell <shell>`
   - `--disabled-login`
   - `--disabled-passord`
-- `adduser <name> <group>`: add user to a group
-- `deluser <name>`: delete a user
-- `deluser <name> <group>`: remove user from a group
+- `useradd <name> <group>`: add user to a group
+- `usermod <name>`: modify a user
+- `userdel <name>`: delete a user
+- `userdel <name> <group>`: remove user from a group
 - `id [user]`: get information about the current (a specific) user
 
+The alternatives `adduser` and `deluser` have more prompts but do more or less the same.
 
 ### Understanding _/etc/passwd_
 
@@ -47,8 +49,9 @@ w.i.p
 
 Groups are stored in the `/etc/group` file.
 
-- `addgroup <name>`: create a group
-- `delgroup <name>`: delete a group
+- `groups <username>`: view which groups a user is member of
+- `groupadd <name>`: create a group
+- `groupdel <name>`: delete a group
 - `usermod -aG <groupname> <username>`: add user to group (a = append)
 
 ### Understanding _/etc/group_
@@ -78,6 +81,7 @@ w.i.p
 
 ## Passwords
 
+- `passwd [user]`: change own or user's password
 - `passwd -S <user>`: get user status
 - `passwd -l <user>`: lock user
 - `passwd -u <user>`: unlock user
