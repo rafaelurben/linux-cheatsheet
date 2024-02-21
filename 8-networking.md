@@ -9,13 +9,17 @@ search: true
 
 On Linux, the ARP table can be displayed with `arp`. Entries can be deleted with `sudo arp -d <address>`. Use `sudo arp -a` to get system info.
 
+## IP configuration
+
+- `ip a(ddr)`: get IP configuration
+
 ## Routing
 
 - `netplan apply`: apply netplan config
 - `ip r(oute) add default via <IP>`: add default gateway
 - `ip r(oute) del default via <IP>`: remove default gateway
 - `ip r(oute) add <DESTINATION NETWORK ADDRESS>/<DESTINATION NETWORK LENGTH> via <NEXT HOP IP ADDRESS>`: add static route
-- `ip neigh`: print arp table
+- `ip n(eigh)`: print arp table
 - `ping [-c <count>] <IP>`: send packets and wait for echo
 - `traceroute <IP>`: check route and hops
 
@@ -38,7 +42,7 @@ Can be used with `watch <command>`.
 - `nslookup`: make DNS queries
 -> `server <IP>`: set DNS server
 -> `set type=<TYPE>`: set record type (e.g. A)
--> `domain`: query a domain
+-> `<domain>`: query a domain
 -> `exit`: leave this prompt
 - `dig <domain> [type]`: query the default DNS server
 
@@ -54,5 +58,6 @@ Use `grep [-B <lines_before>] [-A <lines-after>] "<search>"` as a filter.
 
 ## Other
 
-- `telnet <ip> [port]`: connect to server
+- `telnet <ip> [port]`: connect to server (VERY OLD, DO NOT USE)
+- `ssh user@hostname [-p <port>]`: connect to server (much better, secure)
 - `nc -lnvp 8000`: open a simple netcat server

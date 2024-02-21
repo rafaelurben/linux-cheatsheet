@@ -5,12 +5,24 @@ search: true
 
 # Users and authentication
 
-Learn about users, groups and user authentication.
+Learn about elevated privileges (sudo mode), users, groups and user authentication.
+
+## Elevated privileges & switching users
+
+`sudo` commands are only allowed for users listed in `/etc/sudoers` (or, by default, in the `wheels` group).
+
+- `sudo <command>`: run command with elevated privileges
+- `sudo -s`: open shell as root user
+- `sudo -i`: open login shell as root user (with root's environment)
+- `su <user>`: substitute user / open an interactive shell as the specified user (You need to know the user's password!)
+- `sudo su <user>`: same as above, but without knowing the user's password
 
 ## Users
 
 Users are stored in the `/etc/passwd` file.
 
+- `who`: see all currently logged in users
+- `whoami`: find out who's currently logged in
 - `adduser <name>`: create a user
   - `-c <comment>`
   - `--home <dir>`
@@ -37,7 +49,7 @@ Groups are stored in the `/etc/group` file.
 
 - `addgroup <name>`: create a group
 - `delgroup <name>`: delete a group
-- `usermod -a -G <groupname> <username>`: add user to group (a = append)
+- `usermod -aG <groupname> <username>`: add user to group (a = append)
 
 ### Understanding _/etc/group_
 
@@ -69,12 +81,6 @@ w.i.p
 - `passwd -S <user>`: get user status
 - `passwd -l <user>`: lock user
 - `passwd -u <user>`: unlock user
-
-## Elevated privileges
-
-- `sudo <command>`: run command with elevated privileges
-- `sudo -i`: change to root user
-- `su <user>`: login as user
 
 ## SSH
 

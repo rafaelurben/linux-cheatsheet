@@ -13,8 +13,10 @@ Learn how to manage files and folders.
 
 - `pwd`: print working directory
 - `cd <path>`: change directory
+	- Use `../` to navigate upwards / to parent directory
+	- Use `/<...>` for an absolute path (relative to root folder)
+	- Use `~/<...>` for a path relative to the current user home
 
-Use `../` to navigate to parent dir.
 Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.txt"`)
 
 ### Information
@@ -43,6 +45,11 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 
 - `nano [+<line>] <path>`: edit (and create) a file with the nano editor
   - `Ctrl+o ENTER Ctrl+x` to save and exit
+- `vi <path>`: edit (and create) a file with the vi(m) editor
+  - `I` to enter insert mode
+  - `Esc` to exit insert mode / enter command mode
+  - `:wq` to save and exit
+  - `:q!` to exit without save
 
 ### Reading
 
@@ -90,6 +97,16 @@ The first positions stands for file (`-`) or folder (`d`). The three `rwx` tripl
 2. owner `g`roup
 3. `o`thers
 
+#### Numeric permissions
+
+Permissions can also be represented using the octal (base 8) system.
+
+Each of the three `wxr` triplets (owner user, owner group, others) is represented as one octal integer.
+`w` stands for 4, `x` for 2 and `r` for 1.
+
+- Example 1: `rwxr-xr-x` = 755
+- Example 2: `rwxr-x---` = 750
+
 #### Change file permissions
 
 File permissions can be changed via `chmod` command.
@@ -119,10 +136,6 @@ Files created in folders that have the setUID or setGID permission set will not 
 - `find / -perm /2000 2>/dev/null`: find files with setGID permission
 - `find / -perm /1000 2>/dev/null`: find files with stickybit permission
 
-### Numeric permissions
-
-Permissions can also be changed numeriacally:
-
-w.i.p.
+### More
 
 More on this topic: [here (external link)](https://www.redhat.com/sysadmin/suid-sgid-sticky-bit)

@@ -7,6 +7,8 @@ search: true
 
 ## systemctl
 
+`systemctl` is used to manage system services.
+
 - `systemctl start <name>.service`: start the service.
 - `systemctl restart <name>.service`: restart the service.
 - `systemctl stop <name>.service`: stop the service.

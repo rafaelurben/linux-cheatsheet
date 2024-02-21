@@ -33,15 +33,18 @@ search: true
 ### Mount points
 
 - `lsblk`: list block devices
-- `df`: get filesystem disk usage
-	- `-h`: (human readable storage numbers)
+- `df`: "disk filesystem" - get filesystem disk usage
+  - `-h`: human readable storage numbers
+- `du <path>`: "disk usage" - get disk usage of a folder
+  - `-h`: human readable storage numbers
+  - `-s`: without subdirectories
 
 ### Memory
 
 - `lshw -c memory`: info about memory hardware
 - `free`: get RAM info
-	- `-h`: (human readable storage numbers)
-	- `-t`: (include total)
+	- `-h`: human readable storage numbers
+	- `-t`: include total
 
 
 ### CPU Info
@@ -56,6 +59,11 @@ search: true
 - `pgrep "<name>"`: find process PID by name
 	- `-l`: display names
 	- `-a`: display path
+- `ps [-u <user>]`: "process status"
+  - `-e`: every process
+  - `-f`: detailed
+- `kill <PID>`: send a signal to a process (default: KILL)
+  - `-<SIG>`: KILL/TERM/STOP/CONT
 
 ## Network Info
 
