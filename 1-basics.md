@@ -40,6 +40,8 @@ You can redirect errors with `2>PATH`.
 
 - `exit`: end a terminal (or ssh) session
 - `history`: view the command history
+- `clear`: empty terminal
+- `reset`: reset terminal (use when issues arise regarding weird symbols)
 - `echo <args>`: print arguments to default output
 
 ### Getting help
@@ -47,6 +49,18 @@ You can redirect errors with `2>PATH`.
 - `<command> --help`: common argument for most commands
 - `man [group] <command>`: get man pages (group is a number, e.g. 1 stands for user commands)
 - `info <command>`: get info pages
+
+### System
+
+Poweroff:
+- `shutdown -h [time/"now"]`
+- `halt`
+- `poweroff`
+- `init 0`
+
+Reboot:
+- `shutdown -r [time/"now"]`
+- `reboot`
 
 ## Variables
 

@@ -5,9 +5,13 @@ search: true
 
 # Software management
 
+Depending on the system used, there is a different package manager installed. Common ones are apt, yum, dnf and rpm.
+
+## Apt package manager
+
 The repos that are used as package database are stored in `/etc/apt/sources.list`.
 
-## Install & Upgrade packages
+### Install & Upgrade packages
 
 - `apt-get install <name-of-package> [-y]`: install/upgrade a package
 - `apt-get install -f`: fix broken dependencies
@@ -15,17 +19,17 @@ The repos that are used as package database are stored in `/etc/apt/sources.list
 - `apt-get upgrade`: upgrade installed packages
 - `apt-get dist-upgrade`: upgrade installed packages but better
 
-### Manual install
+#### Manual install
 
 - `apt-get download <name-of-package>`: download a package without installing it
 - `dpkg -i <name-and-version-of-package.deb>`: manually install a package
 
-## Hold packages
+### Hold packages
 
 - `apt-mark hold <name-of-package>`: exclude a package from upgrading
 - `apt-mark unhold <name-of-package>`: remove the hold from a package
 
-## Remove packages
+### Remove packages
 
 - `apt-get remove <name-of-package>`: remove a package without removing its config
 - `apt-get purge <name-of-package>`: remove a package and remove its config
