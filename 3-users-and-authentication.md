@@ -31,44 +31,77 @@ Users are stored in the `/etc/passwd` file.
   - `--shell <shell>`
   - `--disabled-login`
   - `--disabled-passord`
-- `useradd <name> <group>`: add user to a group
-- `usermod <name>`: modify a user
 - `userdel <name>`: delete a user
 - `userdel <name> <group>`: remove user from a group
+- `usermod <name>`: modify a user
 - `id [user]`: get information about the current (a specific) user
 
 The alternatives `adduser` and `deluser` have more prompts but do more or less the same.
 
 ### Understanding _/etc/passwd_
 
-w.i.p
+```
+rafael:x:1001:1001:rafael,,,:/home/rafael:/bin/bash
+[----] - [--] [--] [-------] [----------] [-------]
+|      |   |    |      |          |         |
+|      |   |    |      |          |         +------> 7. Login shell
+|      |   |    |      |          +----------------> 6. Home directory
+|      |   |    |      +---------------------------> 5. GECOS (user infos)
+|      |   |    +----------------------------------> 4. GID (group id)
+|      |   +---------------------------------------> 3. UID (user id)
+|      +-------------------------------------------> 2. Password (nowadays "x"; password in /etc/shadow)
++--------------------------------------------------> 1. Username
+```
 
 - `getent passwd <username>`: get the line in `/etc/passwd` for the specified username
+
+Deactivate login for user: Set login shell to `/usr/sbin/nologin setzen.`
 
 ## Groups
 
 Groups are stored in the `/etc/group` file.
 
-- `groups <username>`: view which groups a user is member of
+- `groups [username]`: view which groups the current (a specific) user is member of
 - `groupadd <name>`: create a group
 - `groupdel <name>`: delete a group
+
+### Manage group membership:
+
 - `usermod -aG <groupname> <username>`: add user to group (a = append)
+- `gpasswd -a <user> <group>`: add user to group
+- `gpasswd -d <user> <group>`: remove user from group (d = delete)
+
+Commands available on some distros:
+- `usermod -rG <groupname> <username>`: remove user from group (r = remove)
+- `useradd <name> <group>`: add user to a group
+- `userdel <name> <group>`: add user to a group
 
 ### Understanding _/etc/group_
 
-w.i.p
+```
+wheel:x:10:rafael,fritz
+[---] - -- [----------]
+|     |  |      |
+|     |  |      +------> 4. Members (comma separated)
+|     |  +-------------> 3. GID (group id)
+|     +----------------> 2. Password (nowadays "x"; password in /etc/gshadow)
++----------------------> 1. Group name
+```
+
+Group passwords are usually not used.
 
 - `getent group <groupname>`: get the line in `/etc/group` for the specified group
 
 ## Password authentication
 
-Info about user authentication is stored in `/etc/shadow` .
+Info about user and group authentication is stored in `/etc/shadow` and `/etc/gshadow`.
 
-### Understanding _/etc/shadow_
+Note: Group passwords are not really used anymore.
 
-w.i.p
+### Understanding _/etc/shadow_ and _/etc/gshadow_
 
-- `getent shadow <username>`: get the line in `/etc/shadow` for the specified user
+- `sudo getent shadow <username>`: get the line in `/etc/shadow` for the specified user
+- `sudo getent gshadow <groupname>`: get the line in `/etc/gshadow` for the specified group
 
 #### Encryption algorithms
 
@@ -85,6 +118,7 @@ w.i.p
 - `passwd -S <user>`: get user status
 - `passwd -l <user>`: lock user
 - `passwd -u <user>`: unlock user
+- `gpasswd`: change/manage group passwords
 
 ## SSH
 
