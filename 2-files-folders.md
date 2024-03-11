@@ -26,6 +26,8 @@ there is a typical structure found on almost all distributions.
 
 ![FHS - Filesystem Hierarchy Standard](assets/img/filesystemhierarchystandard.png)
 
+(Image source unknown)
+
 ### Information
 
 - `ls [folder]`: list the items in the currect or specified folder
@@ -34,7 +36,7 @@ there is a typical structure found on almost all distributions.
 
 ![File permissions](assets/img/file_permissions.png)
 
-(Quelle Bild: www.ics.uci.edu)
+(Image source: www.ics.uci.edu - check out [file permissions](#permissions) to understand the permission bits)
 
 ### Manipulation
 
@@ -97,20 +99,51 @@ More: `zip` and `unzip`
 
 ## Permissions
 
-There are three permission types: _`r`ead_, _`w`rite_ and _e`x`ecute_.
+Every file/folder is owned by a user and a group.
 
-### File permissions
+### File/Folder permissions
 
-Example permissions: `-rwxrwxrwx`
+- Permission groups: _`u`ser_, _`g`roup_ and _`o`thers_.
+- Permission types: _`r`ead_, _`w`rite_ and _e`x`ecute_.
 
-The first positions stands for file (`-`) or folder (`d`). The three `rwx` triplets are for the three permission
-groups: (nothing or `a` stands for all of them)
+Example permissions: `-rwxrwxrwx+`
 
-1. owner `u`ser
-2. owner `g`roup
-3. `o`thers
+The first positions stands for file (`-`), folder (`d`) or link (`l`).
+The three `rwx` triplets stand for the three permission
+groups _`u`ser_, _`g`roup_ and _`o`thers_.
 
-#### Numeric permissions
+If a `+` is present at the end, it means that an ACL ([Access Control List](#acl-access-control-lists)) is active.
+
+### Special permissions
+
+More on this topic: [here (external link)](https://www.redhat.com/sysadmin/suid-sgid-sticky-bit)
+
+#### SetUID & SetGID
+
+**Files** that have the **setUID** or **setGID** bits set will be executed with the permissions of the owner
+(user/group).
+
+Files created in **folders** that have the **setUID** or **setGID** bits set will not belong to the creator but to the
+owner (user/group) of the parent folder.
+
+In `ls -l`, this is displayed in place of the `x` bit of the user/group (first/second `rwx` triplet):
+`s` = with execute permission; `S` = without execute permission
+
+#### Sticky bit
+
+The **sticky bit** shall only be applied to **folders**. If it is set, only the owner of a file in the folder can
+delete or rename it.
+
+In `ls -l`, this is displayed in place of the `x` bit of others (third `rwx` triplet):
+`t` = with execute permission; `T` = without execute permission
+
+#### Finding files with special permissions set
+
+- `find / -perm /4000 2>/dev/null`: find files with setUID set
+- `find / -perm /2000 2>/dev/null`: find files with setGID set
+- `find / -perm /1000 2>/dev/null`: find files with sticky bit set
+
+### Numeric permissions
 
 Permissions can also be represented using the octal (base 8) system.
 
@@ -120,15 +153,53 @@ Each of the three `wxr` triplets (owner user, owner group, others) is represente
 - Example 1: `rwxr-xr-x` = 755
 - Example 2: `rwxr-x---` = 750
 
-#### Change file permissions
+Special permissions are represented by one octal digit before the others.
+
+Numeric values:
+
+<table>
+    <thead>
+        <tr>
+            <th>Group</th>
+            <th colspan="3">(Special perms)</th>
+            <th colspan="3"><u>U</u>ser</th>
+            <th colspan="3"><u>G</u>roup</th>
+            <th colspan="3"><u>O</u>thers</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Perm</th>
+            <td>setUID</td><td>setGID</td><td>sticky bit</td>
+            <td>r</td><td>w</td><td>x</td>
+            <td>r</td><td>w</td><td>x</td>
+            <td>r</td><td>w</td><td>x</td>
+        </tr>
+        <tr>
+            <th>Value</th>
+            <td>4000</td><td>2000</td><td>1000</td>
+            <td>400</td><td>200</td><td>100</td>
+            <td>40</td><td>20</td><td>10</td>
+            <td>4</td><td>2</td><td>1</td>
+        </tr>
+    </tbody>
+</table>
+
+### Change file permissions
 
 File permissions can be changed via `chmod <perm/num> <path>` command.
 
-- `chmod +x`: add execute permission to all three groups
-- `chmod g+w`: add write permission to the owner group
-- `chmod o=r`: only allow others to read
-- `chmod o-wx`: remove write and execute permissions from others
-- `chmod -w`: make the file read-only
+- `chmod +x <path>`: add execute permission to all three groups
+- `chmod g+w <path>`: add write permission to the owner group
+- `chmod o=r <path>`: only allow others to read
+- `chmod o-wx <path>`: remove write and execute permissions from others
+- `chmod -w <path>`: make the file read-only
+- `chmod u+s <path>`: set setUID bit
+- `chmod g+s <path>`: set setGID bit
+- `chmod +t <path>`: set sticky bit
+- `chmod NUM <path>`: set [numeric permissions](#numeric-permissions)
+
+(no letter before the symbol or `a` stands for all of them)
 
 ### File ownership
 
@@ -137,19 +208,22 @@ File permissions can be changed via `chmod <perm/num> <path>` command.
 - `chown :<group> <path>`: transfer group ownership
 - `chgrp <group> <path>`: transfer group ownership
 
-### Special permissions
+### Umask setting
 
-Files created in folders that have the setUID or setGID permission set will not belong to the creator but to the (
-user/group) owner of the parent folder.
+The umask setting defines, what permissions are _removed_ by default on file/folder creation. Special permissions
+cannot be changed by the umask setting.
 
-`s` = with execute permission; `S` = without execute permission
+- File permissions = 0777 - umask
+- Folder permissions = 0666 - umask
 
-- `chmod u+s`: setUID permission
-- `chmod g+s`: setGID permission
-- `find / -perm /4000 2>/dev/null`: find files with setUID permission
-- `find / -perm /2000 2>/dev/null`: find files with setGID permission
-- `find / -perm /1000 2>/dev/null`: find files with stickybit permission
+The umask can be set via `umask` command:
+- `umask <num>`
 
-### More
+### ACL (Access Control Lists)
 
-More on this topic: [here (external link)](https://www.redhat.com/sysadmin/suid-sgid-sticky-bit)
+ACLs can be used to allow more users to access a file or folder.
+
+- `getfacl -a -e <file/folder>`
+- `setfacl -m PERMS <file/folder>`
+
+Example for PERMS: `user:uStudent3:rwx,group:gClass2:rx` or `g:gClass2:r-x`
