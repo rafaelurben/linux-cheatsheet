@@ -24,9 +24,35 @@ Always wrap path names with spaces in quotes. (e. g. `"/users/pi/my folder/ex.tx
 The file system hierarchy is not identical on all distributions but thanks to the _Filesystem Hierarchy Standard_ (FHS),
 there is a typical structure found on almost all distributions.
 
-![FHS - Filesystem Hierarchy Standard](assets/img/filesystemhierarchystandard.png)
+Current version is FHS 3.0 since 2015.
 
-(Image source unknown)
+`/` is the root folder and represents the start of the hierarchy
+
+- `/bin`: Essential user command binaries
+- `/boot`: Static files of the bootloader
+- `/dev`: Device files
+- `/etc`: Editable text configuration / config files
+- `/home`: User home directories
+  - `/home/tux`: would be `tux`'s home folder
+- `/lib`: Essential shared libraries and kernel modules
+- `/media`: Mount point for removable media
+- `/mnt`: Mount point for temporarily mounted filesystems
+- `/opt`: Add-on application software packages
+- `/proc`: Virtual filesystems documenting kernel and process status as text files
+- `/root`: Home directory for the root user
+- `/run`: Run-time variable data
+- `/sbin`: System binaries
+- `/srv`: Data for services provided by this system
+- `/sys`: Information about devices, drivers and some kernel features
+- `/tmp`: Temporary files; often cleared on reboot
+- `/usr`: Read-only user data; (Multi-)User utilities and applications
+  - `/usr/local`
+    - `/usr/local/bin`
+- `/var`: Variable files
+  - `/var/cache`: Application cache data
+  - `/var/log`: Logs
+  - `/var/run`: Link to `/run`
+  - `/var/tmp`: Temporary files preserved between reboots
 
 ### Information
 
@@ -34,7 +60,7 @@ there is a typical structure found on almost all distributions.
 - `ls -l [folder]`: same, but with details
 - `ls -ld [folder]`: get infos about the current or specified folder
 
-![File permissions](assets/img/file_permissions.png)
+![File permissions](../assets/img/file_permissions.png)
 
 (Image source: www.ics.uci.edu - check out [file permissions](#permissions) to understand the permission bits)
 
@@ -66,11 +92,12 @@ there is a typical structure found on almost all distributions.
 ### Reading
 
 - `cat <path>`: print a file to console
+- `b cat <path>`: print an image to console with the _butterfly launcher_ (if installed)
 - `tail <path>`: print the end of a file
-    - `-n <line>`: print the last x lines
+    - `-n <N>`: print the last N lines
     - `-f`: follow the file for changes and print them continuously
 - `less <path>`: read file in scrollable viewer
-- `b cat <path>`: print an image to console with the _butterfly launcher_ (if installed)
+- `more <path>`: read file in scrollable viewer
 
 ### Information
 

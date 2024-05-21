@@ -3,7 +3,7 @@ title: System info
 search: true
 ---
 
-# System info
+# System & Hardware
 
 ## OS info
 
@@ -15,7 +15,9 @@ search: true
   - `-n`: get node hostname
   - `-m`: get hardware architecture
 - `lsb_release -a`: get distro info
+- `hostname`: get hostname
 - `hostnamectl`: get system info
+- `lsmod`: list loadable kernel modules
 
 ## Hardware Info
 
@@ -34,32 +36,50 @@ search: true
 
 - `lsblk`: list block devices
 - `df`: "disk filesystem" - get filesystem disk usage
-  - `-h`: human readable storage numbers
+  - `-h`: human-readable storage numbers
 - `du <path>`: "disk usage" - get disk usage of a folder
-  - `-h`: human readable storage numbers
+  - `-h`: human-readable storage numbers
   - `-s`: without subdirectories
 
 ### Memory
 
 - `lshw -c memory`: info about memory hardware
-- `free`: get RAM info
-	- `-h`: human readable storage numbers
+- `free`: get RAM info (usage incl. swap)
+	- `-h`: human-readable storage numbers
+    - `--si`: Use SI prefixes (base 1000 instead of 1024)
 	- `-t`: include total
-
 
 ### CPU Info
 
 - `lshw -c cpu`: info about cpu
 - `lscpu`: get cpu info
 
+### Other hardware components
+
+- `lspci`: list PCI devices
+- `lsscsi`: list SCSI devices
+- `lsusb`: list USB devices
+- `bluetoothctl`: list Bluetooth devices
+- `boltctl list -a`: list Thunderbolt devices
+
 ## Process Information
 
-- `top`: get processes
+- `top`: get processes (interactive, like task manager)
+  - Interactive shortcuts:
+    - `k <pid> <signal>`: kill
+    - `r <pid> <priority>`: renice
+    - `u <user>`: only processes for user
+    - `q`: quit
+    - `i`: idle
+    - `ESC`: manual refresh
+    - `?`: help
+  - Command arguments:
+    - `-b -n <N>`: batch mode with iteration limit
 - `htop`: get processes (more modern)
 - `pgrep "<name>"`: find process PID by name
 	- `-l`: display names
 	- `-a`: display path
-- `ps [-u <user>]`: "process status"
+- `ps [-u <user>]`: "process status" (typical: `-aux`)
   - `-e`: every process
   - `-f`: detailed
 - `kill <PID>`: send a signal to a process (default: KILL)

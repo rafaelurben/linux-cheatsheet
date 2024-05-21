@@ -6,22 +6,21 @@ search: true
 
 # Linux cheatsheet
 
-A useful cheatsheet with linux commands.
+A (hopefully) useful cheatsheet with linux commands.
 
 ## Table of contents
 
-1. [Basic](1-basics.md)
-2. [Files and folders](2-files-folders.md)
-3. [Users and authentication](3-users-and-authentication.md)
-4. [Software management](4-software-management.md)
-5. [Scripting](5-scripting.md)
-6. [systemd](6-systemd.md)
-7. [System info](7-system-info.md)
-8. [Networking](8-networking.md)
+* [Basic](pages/basics)
+* [Files and folders](pages/files-folders)
+* [Users and authentication](pages/users-and-authentication)
+* [Software management](pages/software-management)
+* [Scripting](pages/scripting)
+* [Systemd & Logging](pages/systemd-and-logging)
+* [System & hardware](pages/system-and-hardware)
+* [Networking](pages/networking)
 
-- [More commands](more-commands.md)
+[More commands](pages/more-commands.md)
 
 ## Tools
 
-- [tmux](tools/tmux.md) - console sessions, windows and panes
-
+* [tmux](pages/tools/tmux.md) - console sessions, windows and panes

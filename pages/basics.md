@@ -12,7 +12,7 @@ Learn the basics.
 The prompt will usually look something like this `username@hostname: ~$ ` or this `[username@hostname ~]$ `.
 You can type commands after the prompt.
 
-If you're in [sudo mode](3-users-and-authentication.md#elevated-privileges--switching-users), `#` will be displayed
+If you're in [sudo mode](users-and-authentication#elevated-privileges--switching-users), `#` will be displayed
 instead of `$`. `~` is your current working directory.
 
 ### Output redirect
@@ -52,15 +52,17 @@ You can redirect errors with `2>PATH`.
 
 ### System
 
-Poweroff:
-- `shutdown -h [time/"now"]`
-- `halt`
-- `poweroff`
-- `init 0`
-
-Reboot:
-- `shutdown -r [time/"now"]`
-- `reboot`
+- `shutdown <time> "<message>"`
+  * `<time>`: z. B. 22:00, +5, now
+  * `-r`: reboot
+  * `-F`: Dateisystem bei nächstem Neustart überprüfen
+  * `-c`: cancel
+  * `-p`: explizit ausschalten (in virtualisierten Systemen z. T. notwendig)
+  * `-f`: force (bis zu 2x angeben)
+- `halt`: same as  `shutdown now`
+- `poweroff`: same as `shutdown now`
+- `init 0`: same as `shutdown now`
+- `reboot`: same as  `shutdown -r now`
 
 ## Variables
 
