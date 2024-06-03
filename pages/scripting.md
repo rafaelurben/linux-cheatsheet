@@ -103,3 +103,10 @@ myFunc() {
 }
 myfunc "Linux"
 ```
+
+```bash
+greet() {
+  echo "Hello $1 $2!"
+}
+greet "John" "Doe"
+```
