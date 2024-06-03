@@ -7,6 +7,24 @@ search: true
 
 Learn the basics.
 
+<!-- TOC -->
+* [Basics](#basics)
+  * [The prompt](#the-prompt)
+    * [Output redirect](#output-redirect)
+    * [Chaining commands](#chaining-commands)
+    * [Useful shortcuts](#useful-shortcuts)
+  * [General Commands](#general-commands)
+    * [Getting help](#getting-help)
+    * [System](#system)
+  * [Variables](#variables)
+    * [Common variables](#common-variables)
+    * [Shell variables](#shell-variables)
+    * [Environment variables](#environment-variables)
+    * [Both var types](#both-var-types)
+    * [Persistent env vars](#persistent-env-vars)
+    * [More](#more)
+<!-- TOC -->
+
 ## The prompt
 
 The prompt will usually look something like this `username@hostname: ~$ ` or this `[username@hostname ~]$ `.

@@ -5,7 +5,22 @@ search: true
 
 # Scripting
 
-Shebang (first line of file) for shell (`.sh`) files: `#!/bin/sh`
+<!-- TOC -->
+* [Scripting](#scripting)
+  * [Fundamentals](#fundamentals)
+  * [If Statements](#if-statements)
+    * [Conditions](#conditions)
+  * [Case Statements](#case-statements)
+  * [Loops](#loops)
+    * [For Loops](#for-loops)
+    * [While Loops](#while-loops)
+    * [Until Loops](#until-loops)
+  * [Functions](#functions)
+<!-- TOC -->
+
+## Fundamentals
+
+Shebang (first line of file) for shell (`.sh`) files: `#!/bin/sh` or `#!/bin/bash`
 
 Shell arguments: `$1`, `$2` ... `$9`; `$@` (all arguments)
 

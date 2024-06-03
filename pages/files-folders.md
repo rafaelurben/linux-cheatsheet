@@ -7,6 +7,33 @@ search: true
 
 Learn how to manage files and folders.
 
+<!-- TOC -->
+* [Files and folders](#files-and-folders)
+  * [Folders (directories)](#folders-directories)
+    * [Navigation](#navigation)
+      * [Hierarchy](#hierarchy)
+    * [Information](#information)
+    * [Manipulation](#manipulation)
+  * [Files](#files)
+    * [Manipulation](#manipulation-1)
+    * [Editing](#editing)
+    * [Reading](#reading)
+    * [Information](#information-1)
+    * [Finding](#finding)
+  * [Archives](#archives)
+  * [Permissions](#permissions)
+    * [File/Folder permissions](#filefolder-permissions)
+    * [Special permissions](#special-permissions)
+      * [SetUID & SetGID](#setuid--setgid)
+      * [Sticky bit](#sticky-bit)
+      * [Finding files with special permissions set](#finding-files-with-special-permissions-set)
+    * [Numeric permissions](#numeric-permissions)
+    * [Change file permissions](#change-file-permissions)
+    * [File ownership](#file-ownership)
+    * [Umask setting](#umask-setting)
+    * [ACL (Access Control Lists)](#acl-access-control-lists)
+<!-- TOC -->
+
 ## Folders (directories)
 
 ### Navigation

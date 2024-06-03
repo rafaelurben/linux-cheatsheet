@@ -5,6 +5,19 @@ search: true
 
 # System & Hardware
 
+<!-- TOC -->
+* [System & Hardware](#system--hardware)
+  * [OS info](#os-info)
+  * [Hardware Info](#hardware-info)
+    * [Disk Drive](#disk-drive)
+    * [Mount points](#mount-points)
+    * [Memory](#memory)
+    * [CPU Info](#cpu-info)
+    * [Other hardware components](#other-hardware-components)
+  * [Process Information](#process-information)
+  * [Network Info](#network-info)
+<!-- TOC -->
+
 ## OS info
 
 - `uname`: get system info

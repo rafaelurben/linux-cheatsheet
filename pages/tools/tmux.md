@@ -8,6 +8,14 @@ search: true
 "`tmux` is a terminal multiplexer. It lets you switch easily between several programs in one terminal, detach them (they
 keep running in the background) and reattach them to a different terminal."
 
+<!-- TOC -->
+* [tmux](#tmux)
+  * [terminal commands](#terminal-commands)
+  * [tmux commands](#tmux-commands)
+  * [shortcuts](#shortcuts)
+  * [config](#config)
+<!-- TOC -->
+
 ## terminal commands
 
 - `tmux new-session [-s <name>]`: create a new session

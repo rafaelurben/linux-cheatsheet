@@ -5,6 +5,16 @@ search: true
 
 # systemd & logging
 
+<!-- TOC -->
+* [systemd & logging](#systemd--logging)
+  * [systemd](#systemd)
+    * [systemctl](#systemctl)
+      * [unit files](#unit-files)
+    * [loginctl](#loginctl)
+    * [journalctl](#journalctl)
+  * [Syslog](#syslog)
+<!-- TOC -->
+
 ## systemd
 
 `Systemd` is the most commonly used init system in Linux. It represents the first process started by the kernel.

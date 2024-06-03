@@ -7,6 +7,22 @@ search: true
 
 Learn about elevated privileges (sudo mode), users, groups and user authentication.
 
+<!-- TOC -->
+* [Users and authentication](#users-and-authentication)
+  * [Elevated privileges & switching users](#elevated-privileges--switching-users)
+  * [Users](#users)
+    * [Understanding _/etc/passwd_](#understanding-_etcpasswd_)
+  * [Groups](#groups)
+    * [Manage group membership:](#manage-group-membership)
+    * [Understanding _/etc/group_](#understanding-_etcgroup_)
+  * [Password authentication](#password-authentication)
+    * [Understanding _/etc/shadow_ and _/etc/gshadow_](#understanding-_etcshadow_-and-_etcgshadow_)
+      * [Encryption algorithms](#encryption-algorithms)
+  * [Passwords](#passwords)
+  * [SSH](#ssh)
+    * [SSH Config](#ssh-config)
+<!-- TOC -->
+
 ## Elevated privileges & switching users
 
 `sudo` commands are only allowed for users listed in `/etc/sudoers` (or, by default, in the `wheels` group).

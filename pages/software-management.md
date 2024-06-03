@@ -5,6 +5,18 @@ search: true
 
 # Software management
 
+<!-- TOC -->
+* [Software management](#software-management)
+  * [Important notes](#important-notes)
+  * [Apt package manager](#apt-package-manager)
+    * [Install & Upgrade packages](#install--upgrade-packages)
+      * [Manual install](#manual-install)
+    * [Hold packages](#hold-packages)
+    * [Remove packages](#remove-packages)
+<!-- TOC -->
+
+## Important notes
+
 Depending on the system used, there is a different package manager installed. Common ones are apt, yum, dnf and rpm.
 
 ## Apt package manager

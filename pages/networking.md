@@ -5,6 +5,17 @@ search: true
 
 # Networking
 
+<!-- TOC -->
+* [Networking](#networking)
+  * [ARP](#arp)
+  * [IP configuration](#ip-configuration)
+  * [Routing](#routing)
+  * [netstat](#netstat)
+  * [DNS](#dns)
+  * [TShark](#tshark)
+  * [Other](#other)
+<!-- TOC -->
+
 ## ARP
 
 On Linux, the ARP table can be displayed with `arp`. Entries can be deleted with `sudo arp -d <address>`. Use `sudo arp -a` to get system info.
