@@ -18,7 +18,6 @@ jobs:
           input_dir: .
           output_dir: pdf_build
           images_dir: assets/img
-          image_import: ../assets/img
           build_html: false
           table_of_contents: false
           
