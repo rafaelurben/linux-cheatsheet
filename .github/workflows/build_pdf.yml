@@ -20,7 +20,7 @@ jobs:
 
       - name: Build using md-to-pdf
         run: |-
-          cat index.md pages/*.md | md-to-pdf > linux-cheatsheet.pdf
+          cat index_pdf.md pages/*.md | md-to-pdf > linux-cheatsheet.pdf
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

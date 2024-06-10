@@ -3,10 +3,10 @@ title: systemd
 search: true
 ---
 
-# systemd & logging
+# systemd and logging
 
 <!-- TOC -->
-* [systemd & logging](#systemd--logging)
+* [systemd and logging](#systemd-and-logging)
   * [systemd](#systemd)
     * [systemctl](#systemctl)
       * [unit files](#unit-files)

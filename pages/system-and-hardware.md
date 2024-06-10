@@ -3,10 +3,10 @@ title: System info
 search: true
 ---
 
-# System & Hardware
+# System and Hardware
 
 <!-- TOC -->
-* [System & Hardware](#system--hardware)
+* [System and Hardware](#system-and-hardware)
   * [OS info](#os-info)
   * [Hardware Info](#hardware-info)
     * [Disk Drive](#disk-drive)
