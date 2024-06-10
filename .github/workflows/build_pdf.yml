@@ -7,21 +7,25 @@ on:
   workflow_dispatch:
 
 jobs:
-  converttopdf:
+  build_pdf:
     name: Build PDF
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       
-      - uses: baileyjm02/markdown-to-pdf@v1
+      - name: Build using md-to-pdf
+        run: |-
+          npm install -g md-to-pdf
+          mkdir -p _output
+          echo; echo "Input Files Listing"
+          find . \( -wholename "./pages/*.md" -or -wholename "./index.md" \)
+          echo; echo "Generating PDF"
+          find . \( -wholename "./pages/*.md" -or -wholename "./index.md" \) -exec md-to-pdf {} \; > _output/linux-cheatsheet.pdf
+          echo; echo "Output Files Listing"
+          ls _output
+          cd ..
+      
+      - uses: actions/upload-artifact@v1
         with:
-          input_dir: .
-          output_dir: pdf_build
-          images_dir: assets/img
-          build_html: false
-          table_of_contents: false
-          
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Generated PDF
-          path: pdf_build
+          name: "Generated PDF"
+          path: _output
