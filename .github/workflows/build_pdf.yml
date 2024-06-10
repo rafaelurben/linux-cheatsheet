@@ -11,21 +11,23 @@ jobs:
     name: Build PDF
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
       
       - name: Build using md-to-pdf
         run: |-
           npm install -g md-to-pdf
           mkdir -p _output
-          echo; echo "Input Files Listing"
-          find . \( -wholename "./pages/*.md" -or -wholename "./index.md" \)
-          echo; echo "Generating PDF"
-          find . \( -wholename "./pages/*.md" -or -wholename "./index.md" \) -exec md-to-pdf {} \; > _output/linux-cheatsheet.pdf
-          echo; echo "Output Files Listing"
+          echo; echo "Input Files Listing:"
+          find . \( -wholename "./index.md" -or -wholename "./pages/*.md" \)
+          echo; echo "Generating PDF..."
+          find . \( -wholename "./index.md" -or -wholename "./pages/*.md" \) -exec cat {} \; | md-to-pdf > _output/linux-cheatsheet.pdf
+          echo; echo "Output Files Listing:"
           ls _output
           cd ..
       
-      - uses: actions/upload-artifact@v1
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
         with:
           name: "Generated PDF"
           path: _output
