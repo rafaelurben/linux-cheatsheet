@@ -17,14 +17,11 @@ jobs:
       - name: Install md-to-pdf
         run: |-
           npm install -g md-to-pdf
-      
+
       - name: Build using md-to-pdf
         run: |-
-          echo; echo "Input Files Listing:"
-          find . \( -wholename "./index.md" -or -wholename "./pages/*.md" \)
-          echo; echo "Generating PDF..."
-          find . \( -wholename "./index.md" -or -wholename "./pages/*.md" \) -exec cat {} \; | md-to-pdf > linux-cheatsheet.pdf
-      
+          cat index.md pages/*.md | md-to-pdf > linux-cheatsheet.pdf
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
