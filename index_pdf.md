@@ -17,7 +17,7 @@ This PDF has been automatically generated and might not represent the current ve
 * [Basic](#basics)
 * [Files and folders](#files-and-folders)
 * [Users and authentication](#users-and-authentication)
-* [Software management](#software-management)
+* [Package management](#package-management)
 * [Scripting](#scripting)
 * [Systemd & Logging](#systemd-and-logging)
 * [System & hardware](#system-and-hardware)

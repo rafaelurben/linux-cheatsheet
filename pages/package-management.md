@@ -3,23 +3,31 @@ title: Software management
 search: true
 ---
 
-# Software management
+# Package management
 
 <!-- TOC -->
-* [Software management](#software-management)
-  * [Important notes](#important-notes)
-  * [Apt package manager](#apt-package-manager)
+* [Package management](#package-management)
+  * [Overview over different package managers](#overview-over-different-package-managers)
+  * [apt (Advanced Package Tools)](#apt-advanced-package-tools)
     * [Install & Upgrade packages](#install--upgrade-packages)
       * [Manual install](#manual-install)
     * [Hold packages](#hold-packages)
     * [Remove packages](#remove-packages)
+  * [dnf (Dandified Yum)](#dnf-dandified-yum)
 <!-- TOC -->
 
-## Important notes
+## Overview over different package managers
 
-Depending on the system used, there is a different package manager installed. Common ones are apt, yum, dnf and rpm.
+Depending on the system used, there is a different package manager installed. Common ones are...
 
-## Apt package manager
+- [apt (Advanced Package Tools)](#apt-advanced-package-tools)
+- yum (Yellowdog Updater, Modified)
+- [dnf (Dandified Yum)](#dnf-dandified-yum)
+- rpm (RedHat Package Manager)
+
+## apt (Advanced Package Tools)
+
+Apt ist used in Ubuntu distributions and many more.
 
 The repos that are used as package database are stored in `/etc/apt/sources.list`.
 
@@ -52,3 +60,9 @@ The repos that are used as package database are stored in `/etc/apt/sources.list
 Trick: `remove` and `purge` support a wildcard (\*) at the end!
 
 - `apt-cache show <name-of-package>`: get infos about a package from cache
+
+## dnf (Dandified Yum)
+
+TODO
+
+...

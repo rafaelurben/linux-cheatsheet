@@ -13,7 +13,7 @@ A (hopefully) useful cheatsheet with linux commands.
 * [Basic](pages/basics)
 * [Files and folders](pages/files-folders)
 * [Users and authentication](pages/users-and-authentication)
-* [Software management](pages/software-management)
+* [Package management](pages/package-management)
 * [Scripting](pages/scripting)
 * [Systemd & Logging](pages/systemd-and-logging)
 * [System & hardware](pages/system-and-hardware)
