@@ -95,6 +95,7 @@ search: true
 - `ps [-u <user>]`: process status
     - `-e`: every process
     - `-f`: detailed
+    - `-Z`: also show SELinux context/labels
     - (typical: `-aux`; can be grepped)
 - `kill [...] <PID1> [PID2...]`: send a signal to a process (default: TERM)
     - `-TERM` (15): end gracefully (let process terminate itself)
@@ -110,3 +111,5 @@ search: true
 - `netstat`: display network connections, routing tables, interface statistics and more
     - `-p`: include pid and process
 - `ss`: same but more TCP and state info
+
+For more, see [networking](networking.md).
