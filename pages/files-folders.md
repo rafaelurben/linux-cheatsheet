@@ -56,8 +56,12 @@ Current version is FHS 3.0 since 2015.
 `/` is the root folder and represents the start of the hierarchy
 
 - `/bin`: Essential user command binaries
+  - e. g. `cat`, `chmod`, `echo`, etc.
 - `/boot`: Static files of the bootloader
 - `/dev`: Device files
+  - `/dev/null`: "black hole"
+  - `/dev/zero`: infinite stream of zeroes
+  - `/dev/(u)random`: infinite stream of random bytes
 - `/etc`: Editable text configuration / config files
 - `/home`: User home directories
   - `/home/tux`: would be `tux`'s home folder
@@ -72,8 +76,11 @@ Current version is FHS 3.0 since 2015.
 - `/srv`: Data for services provided by this system
 - `/sys`: Information about devices, drivers and some kernel features
 - `/tmp`: Temporary files; often cleared on reboot
-- `/usr`: Read-only user data; (Multi-)User utilities and applications
-  - `/usr/local`
+- `/usr`: Read-only user data; (Multi-)User utilities and applications; "User"/"Unix System Resources"
+  - `/usr/bin`: user commands
+  - `/usr/include`: header files, included by programs
+  - `/usr/lib`: libraries
+  - `/usr/local`: programs which are independent of the distro
     - `/usr/local/bin`
 - `/var`: Variable files
   - `/var/cache`: Application cache data
@@ -98,6 +105,8 @@ Current version is FHS 3.0 since 2015.
 
 ## Files
 
+In Linux, a lot of things are files / file handles. This includes **devices**, **pipes**, **sockets** and **symlinks**.
+
 ### Manipulation
 
 - `touch <path>`: create an empty file
@@ -119,12 +128,12 @@ Current version is FHS 3.0 since 2015.
 ### Reading
 
 - `cat <path>`: print a file to console
-- `b cat <path>`: print an image to console with the _butterfly launcher_ (if installed)
+- `less <path>`: read file in scrollable viewer (scroll up and down)
+- `more <path>`: read file in scrollable viewer (scroll only down)
 - `tail <path>`: print the end of a file
     - `-n <N>`: print the last N lines
-    - `-f`: follow the file for changes and print them continuously
-- `less <path>`: read file in scrollable viewer
-- `more <path>`: read file in scrollable viewer
+    - `-f`: follow/watch the file for changes and print them continuously
+- `b cat <path>`: print an image to console with the _butterfly launcher_ (if installed)
 
 ### Information
 
@@ -133,9 +142,12 @@ Current version is FHS 3.0 since 2015.
 
 ### Finding
 
-- `find / -name '*searchstring*'`: Searches the file system for a file that includes searchstring in its name.
-- `find / -name '*searchstring*' -exec rm {} \;`: Searches the file system for a file that includes searchstring in its
-  name and deletes it with the rm command. The backslash and semicolon symbolize the end of the -exec section.
+- `find <folder> <search_params>`: Searches the file system
+    - `-empty`: Only empty files
+    - `-name '*searchstring*'`: Search by name 
+    - `-user USERNAME`: Owned by user
+    - `-type X`: Filter by type (`f` = regular file, `l` = link, `d` = directory, `p` = pipe, `s` = socket)
+    - `-exec CMD {} \;`: Run command for every item found (`\;` marks end of `-exec` section, `{}` the path placeholder)
 - `grep searchstring /var/myfirstfile`: Searches for the pattern searchstring from the contents of /var/myfirstfile.
     - `-i`: ignore case
     - `-R`: read all files under directories recursiveley and follow symbolic links
@@ -145,9 +157,8 @@ Current version is FHS 3.0 since 2015.
 
 - `tar -czvf <filename>.tar.gz /var/myfirstdirectory`: compress a directory into an archive
 - `tar -xzvf <filename>.tar.gz`: extract the archive
-
-More: `zip` and `unzip`
-
+- `zip [options] <target.zip> <source-files>`: zip files
+    - `-r`: recursively zip directory
 - `unzip [options] <file>`: unzip a file
     - `-j`: into current directory
 
@@ -280,4 +291,12 @@ ACLs can be used to allow more users to access a file or folder.
 - `getfacl -a -e <file/folder>`
 - `setfacl -m PERMS <file/folder>`
 
-Example for PERMS: `user:uStudent3:rwx,group:gClass2:rx` or `g:gClass2:r-x`
+`PERMS` is a list of entries separated by a comma. Every entry consists of type, name and permissions.
+If no type is specified, `u` for `user` is assumed.
+
+- `[u:]USERNAME:PERMISSIONS,g:GROUPNAME:PERMISSIONS,...`
+- `u:uStudent3:rwx,g:gClass2:rx`
+- `g:gClass2:r-x`
+- `tux:-`
+
+ACLs are applied from top to bottom. The first matching rule will be applied!
