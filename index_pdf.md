@@ -1,7 +1,15 @@
 ---
 document_title: linux cheatsheet by rafaelurben
+stylesheet: https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.6.1/github-markdown.min.css
+body_class: markdown-body
 css: |-
-  h1 { page-break-before: always; }
+  h1:not(:first-child) { page-break-before: always; }
+  h2[id^="title"] { display: none; }
+  .page-break { page-break-after: always; }
+  .markdown-body { font-size: 11px; }
+  .markdown-body pre > code { white-space: pre-wrap; }
+pdf_options:
+  outline: true
 ---
 
 # Linux cheatsheet by rafaelurben
@@ -14,14 +22,6 @@ This PDF has been automatically generated and might not represent the current ve
 
 ## Table of contents
 
-* [About linux](#about-linux)
-* [Basic](#basics)
-* [Files and folders](#files-and-folders)
-* [Users and authentication](#users-and-authentication)
-* [Package management](#package-management)
-* [Scripting](#scripting)
-* [Systemd & Logging](#systemd-and-logging)
-* [System & hardware](#system-and-hardware)
-* [Networking](#networking)
+This PDF contains bookmarks/outline. Use them as a table of contents.
 
-[More commands](#more-commands.md)
+<!-- end of file -->

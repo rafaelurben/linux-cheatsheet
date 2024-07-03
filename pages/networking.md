@@ -72,3 +72,5 @@ Use `grep [-B <lines_before>] [-A <lines-after>] "<search>"` as a filter.
 - `telnet <ip> [port]`: connect to server (VERY OLD, DO NOT USE)
 - `ssh user@hostname [-p <port>]`: connect to server (much better, secure)
 - `nc -lnvp 8000`: open a simple netcat server
+
+<!-- end of file -->

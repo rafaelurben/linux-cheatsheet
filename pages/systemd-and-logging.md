@@ -101,3 +101,5 @@ Note: Systemd journald stores files in a binary format which cannot be easily ta
 Syslog is older that journal but is still widely used. Logs are stored in plaintext format.
 
 <!-- TODO -->
+
+<!-- end of file -->

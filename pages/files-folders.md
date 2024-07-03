@@ -300,3 +300,5 @@ If no type is specified, `u` for `user` is assumed.
 - `tux:-`
 
 ACLs are applied from top to bottom. The first matching rule will be applied!
+
+<!-- end of file -->

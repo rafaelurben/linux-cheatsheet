@@ -28,3 +28,5 @@ A distribution is a specific "flavour" of Linux with preinstalled packages and c
     - RHEL (RedHat Enterprise Linux)
     - Rocky
     - CentOS
+
+<!-- end of file -->

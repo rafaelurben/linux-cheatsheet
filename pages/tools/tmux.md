@@ -72,3 +72,5 @@ set -g mouse on
 ```
 
 Short: `echo 'set -g mouse on' >> ~/.tmux.conf`
+
+<!-- end of file -->

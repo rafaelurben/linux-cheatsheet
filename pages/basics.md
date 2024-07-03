@@ -125,3 +125,5 @@ in `/etc/profile.d/` (accessible by bash login shells; using files in the folder
 ### More
 
 - `export PATH="$PATH:<path-to-add>"`: add a path to PATH
+
+<!-- end of file -->

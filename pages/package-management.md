@@ -110,3 +110,5 @@ Dnf also includes "modules": groups of packages.
 - `dnf module <subcommand...>`: all
 
 (see documentation for details)
+
+<!-- end of file -->
