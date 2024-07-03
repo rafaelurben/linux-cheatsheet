@@ -14,6 +14,7 @@ This PDF has been automatically generated and might not represent the current ve
 
 ## Table of contents
 
+* [About linux](#about-linux)
 * [Basic](#basics)
 * [Files and folders](#files-and-folders)
 * [Users and authentication](#users-and-authentication)

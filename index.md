@@ -10,6 +10,7 @@ A (hopefully) useful cheatsheet with linux commands.
 
 ## Table of contents
 
+* [About linux](pages/about-linux.md)
 * [Basic](pages/basics)
 * [Files and folders](pages/files-folders)
 * [Users and authentication](pages/users-and-authentication)
