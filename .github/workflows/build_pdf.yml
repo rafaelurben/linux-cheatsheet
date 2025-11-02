@@ -22,7 +22,7 @@ jobs:
 
       - name: Build using md-to-pdf
         run: |-
-          cat index_pdf.md pages/*.md | md-to-pdf > linux-cheatsheet.pdf
+          cat index_pdf.md pages/*.md | md-to-pdf --launch-options '{ "args": ["--no-sandbox"] }' > linux-cheatsheet.pdf
 
       - name: Upload artifact
         if: "!startsWith(github.ref, 'refs/tags/v')"
